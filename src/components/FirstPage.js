@@ -9,11 +9,14 @@ function FirstPage() {
       bio: "",
       phone: "",
     },
+    onSubmit: (values) => {
+      console.log(values);
+    },
   });
-  console.log(formik.values);
+
   return (
     <div>
-      <form>
+      <form onSubmit={formik.handleSubmit}>
         <label htmlFor="username">Enter Username</label>
         <input
           type="text"
@@ -46,6 +49,7 @@ function FirstPage() {
           onChange={formik.handleChange}
           value={formik.values.phone}
         ></input>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
